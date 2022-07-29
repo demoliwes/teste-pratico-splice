@@ -40,7 +40,7 @@ Para rodar esse projeto, você deverá, antes, instalar as dependências do proj
 ```sh
 $ npm install
 ```
-or
+ou
 ```sh
 $ yarn
 ```
@@ -49,7 +49,7 @@ depois de instalar todas dependencias rode esse comando para inciar a aplicaçã
 ```sh
 $ npm run start
 ```
-or
+ou
 ```sh
 $ yarn start
 ```
