@@ -8,7 +8,7 @@ interface IPaginationItemProps {
   isCurrent?: boolean;
 }
 
-export const PaginationItem: React.FC<IPaginationItemProps> = ({
+const PaginationItem: React.FC<IPaginationItemProps> = ({
   number,
   onPageChange,
   isCurrent = false
@@ -21,3 +21,5 @@ export const PaginationItem: React.FC<IPaginationItemProps> = ({
     </PaginationItemContainer>
   );
 };
+
+export default PaginationItem

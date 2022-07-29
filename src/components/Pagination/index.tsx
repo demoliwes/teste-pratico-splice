@@ -1,6 +1,6 @@
-import React from 'react';
-import { PageChanger } from './PageChanger';
-import { PaginationItem } from './PaginationItem';
+import React, { useMemo } from 'react';
+import PageChanger from './PageChanger';
+import PaginationItem from './PaginationItem';
 
 import { PaginationContainer, PaginationPagesWrapper } from './styles';
 
@@ -9,26 +9,28 @@ interface PaginationProps {
   registersPerPage?: number;
   currentPage?: number;
   onPageChange: (page: number) => void;
-  hasDescription?: boolean;
 }
 
-const siblingsCount = 10;
+export enum PageChangerTypes {
+  INCREASE,
+  DECREASE
+};
 
-function generatePagesArray(from: number, to: number) {
+
+const generatePagesArray = (from: number, to: number) => {
   return [...new Array(to - from)]
     .map((_, index) => from + index + 1)
     .filter(page => page > 0);
 }
 
-export const Pagination: React.FC<PaginationProps> = ({
+const Pagination: React.FC<PaginationProps> = ({
   totalCountOfRegisters,
   registersPerPage = 15,
   currentPage = 0,
-  onPageChange,
-  hasDescription
+  onPageChange
 }) => {
   const lastPage = Math.ceil(totalCountOfRegisters / registersPerPage) - 1;
-
+  const siblingsCount = useMemo<number>(() => { return 10; }, [])
   const previousPages =
     currentPage > 0
       ? generatePagesArray(currentPage + 1 - siblingsCount, currentPage)
@@ -50,7 +52,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           totalCountOfRegisters={totalCountOfRegisters}
           currentPage={currentPage}
           onPageChange={onPageChange}
-          type="decrease"
+          type={PageChangerTypes.DECREASE}
         />
 
 
@@ -83,18 +85,18 @@ export const Pagination: React.FC<PaginationProps> = ({
           totalCountOfRegisters={totalCountOfRegisters}
           currentPage={currentPage}
           onPageChange={onPageChange}
-          type="increase"
+          type={PageChangerTypes.INCREASE}
         />
       </PaginationPagesWrapper>
 
       <div>
-        <strong>{(currentPage) * registersPerPage + 1}</strong> -{' '}
+        <strong>{totalCountOfRegisters === 0 ? 0 : (currentPage) * registersPerPage + 1}</strong> -{' '}
         <strong>
           {lastPage === currentPage
             ? totalCountOfRegisters
             : currentPage * registersPerPage > totalCountOfRegisters
               ? totalCountOfRegisters
-              : currentPage * registersPerPage + registersPerPage}
+              : totalCountOfRegisters === 0 ? 0 : currentPage * registersPerPage + registersPerPage}
         </strong>{' '}
         de <strong>{totalCountOfRegisters}</strong>
       </div>
@@ -102,3 +104,5 @@ export const Pagination: React.FC<PaginationProps> = ({
     </PaginationContainer>
   );
 };
+
+export default Pagination

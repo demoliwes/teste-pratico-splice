@@ -1,17 +1,19 @@
 import React, { useMemo } from 'react';
 
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
+import { PageChangerTypes } from '..';
 import { PageChangerContainer } from './styles';
+
 
 interface IPageChangerProps {
   currentPage: number;
   totalCountOfRegisters: number;
   onPageChange: (page: number) => void;
-  type: 'increase' | 'decrease';
+  type: PageChangerTypes;
   registerPerPage: number;
 }
 
-export const PageChanger: React.FC<IPageChangerProps> = ({
+const PageChanger: React.FC<IPageChangerProps> = ({
   currentPage,
   totalCountOfRegisters,
   onPageChange,
@@ -28,19 +30,19 @@ export const PageChanger: React.FC<IPageChangerProps> = ({
   );
 
   function handleChangePage() {
-    if (isIncreasePossible && type === 'increase') {
+    if (isIncreasePossible && type === PageChangerTypes.INCREASE) {
       onPageChange(currentPage + 1);
     }
-    if (isDecreasePossible && type === 'decrease') {
+    if (isDecreasePossible && type === PageChangerTypes.DECREASE) {
       onPageChange(currentPage - 1);
     }
   }
   return (
     <PageChangerContainer
       onClick={() => handleChangePage()}
-      disabled={type === 'decrease' ? !isDecreasePossible : !isIncreasePossible}
+      disabled={type === PageChangerTypes.DECREASE ? !isDecreasePossible : !isIncreasePossible}
     >
-      {type === 'increase' ? (
+      {type === PageChangerTypes.INCREASE ? (
         <HiArrowRight size={22} />
       ) : (
         <HiArrowLeft size={22} />
@@ -48,3 +50,6 @@ export const PageChanger: React.FC<IPageChangerProps> = ({
     </PageChangerContainer>
   );
 };
+
+
+export default PageChanger
