@@ -28,7 +28,6 @@ API
 Boa sorte! 
 ```
 ### 💻 Tecnologias utilizadas
-socket royale uses some open source projects to work properly:
 
   * ReactJS
   * Typescript
@@ -42,7 +41,7 @@ $ npm install
 ```
 ou
 ```sh
-$ yarn
+$ yarn install
 ```
 depois de instalar todas dependencias rode esse comando para inciar a aplicação:
 
