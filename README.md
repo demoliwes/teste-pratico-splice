@@ -37,18 +37,10 @@ Boa sorte!
 Para rodar esse projeto, você deverá, antes, instalar as dependências do projeto.
 
 ```sh
-$ npm install
-```
-ou
-```sh
 $ yarn install
 ```
 depois de instalar todas dependencias rode esse comando para inciar a aplicação:
 
-```sh
-$ npm run start
-```
-ou
 ```sh
 $ yarn dev
 ```
