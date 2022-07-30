@@ -50,7 +50,7 @@ $ npm run start
 ```
 ou
 ```sh
-$ yarn start
+$ yarn dev
 ```
 
 O site será iniciado em:
