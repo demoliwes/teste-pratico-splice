@@ -1,55 +1,55 @@
 # 🚗 Teste Prático Splice
 
 Desenvolvi esse site como parte do processo seletivo da empresa Splice, a partir da situação apresentada abaixo:
+I developed this simple website as a part of a job interview for Grupo Splice off of the following Utterance:
 
 ```sh
 Situação
 
-O CCO (Centro de Controle Operacional) de um dos contratos da Splice, está tendo alguns problemas para identificar a marca de alguns veículos que foram atuados. Portanto você foi chamado para ajuda-los a facilitar essa tarefa quando for necessária.
+Splice's OCC (Operational Control Center) is having trouble to identify fined vehicles and asked you to help them to ease this task. 
 
-Para isso, você deverá desenvolver uma aplicação web (em React.js) com uma listagem de marcas de veículos, que contenha paginação e filtro, para que o CCO consiga, através do código, encontrar a marca desejada. Além de um formulário simples (dois inputs, código e nome), que poderá ser utilizado para inserir um novo item na listagem.
+To do so, you have to develop a React.js web applcation, listing vehicle brands, containing filters and paginations so the OCC can, trough your code, find the vehicle brand they want. You'll have to develop a vehicle table and a simple form containing two inputs, one for the vehicle code and the other for the vehicle's name in order to register a new vehicle.
 
-Requisitos
 
-- Listagem (contendo código e nome da marca)
+Requirements
 
-- Paginação (contendo index e quantidade de itens por página)
+- Listing the vehicles
 
-- Filtro (deve procurar no nome da marca e no código)
+- Pagination (with total vehicle count and current page index)
 
-- Inserção de novo item (deve ser validado de já existe um nome ou um código ao inserir)
+- Filters (brand name and code)
 
-Obs. O link da API gratuita para acesso aos dados iniciais de marcas está logo abaixo. Os itens da listagem NÃO precisam ser editados ou apagados. O contexto informado é fictício e o código devera ser entregue pelo GitHub.
+- New item register  (you must check if the vehicle brand or code was registered previously before registering a new one)
+
+Obs. The data will be available in the following link: 
 
 https://parallelum.com.br/fipe/api/v1/carros/marcas
 
-API
+You don't have to post new data to this API.
 
 Boa sorte! 
 ```
-### 💻 Tecnologias utilizadas
+### 💻 Technologies I used
 
   * ReactJS
   * Typescript
 
-### 🔨 Instalação
+### 🔨 Getting started
 
-Para rodar esse projeto, você deverá, antes, instalar as dependências do projeto.
+Before running this project you must install all of it's dependencies.
 
 ```sh
 $ yarn install
 ```
-depois de instalar todas dependencias rode esse comando para inciar a aplicação:
+Now you can run the project using:
 
 ```sh
 $ yarn dev
 ```
 
-O site será iniciado em:
+The website will be available at:
 
 ```sh
 localhost:3000
 ```
-Você também pode acessar o site através de:
-https://teste-pratico-splice-m62i2k5b1-demoliwes.vercel.app/
 
